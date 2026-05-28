@@ -165,9 +165,9 @@
       const [form, setForm] = useState({ name: "", birth: "", note: "" });
       const { under2Count, remainTotal, remainUnder2 } = calcSlots(children);
       const formMonths = form.birth ? ageInMonths(form.birth) : 0;
-      const formIsOver3 = formMonths >= 36;
+      const formIsOver3 = false;
       const under2Blocked = isUnder2(formMonths) && remainUnder2 === 0;
-      const canAdd = form.name.trim() && form.birth && !under2Blocked && !formIsOver3 && remainTotal > 0;
+      const canAdd = form.name.trim() && form.birth && !under2Blocked && remainTotal > 0;
 
       function addChild() {
         if (!canAdd) return;
@@ -225,9 +225,9 @@
                 <div style={{ marginBottom: 10 }}>
                   <label style={{ fontSize: 13, color: "#666", display: "block", marginBottom: 4 }}>出生年月</label>
                   <input type="month" value={form.birth} onChange={e => setForm({ ...form, birth: e.target.value })}
-                    style={{ width: "100%", border: `1.5px solid ${formIsOver3 ? "#E55353" : "#E0D9FF"}`, borderRadius: 10, padding: "10px 12px", fontSize: 15, outline: "none", fontFamily: "inherit" }} />
-                  {form.birth && <div style={{ fontSize: 12, color: formIsOver3 ? "#E55353" : "#888", marginTop: 4, paddingLeft: 4 }}>
-                    {formIsOver3 ? "⚠️ 已滿3歲，超過收托上限" : `目前 ${ageInMonths(form.birth)} 個月（${ageLabel(ageInMonths(form.birth))}）・預計 ${formatYearMonth(graduationDate(form.birth))} 畢業`}
+                    style={{ width: "100%", border: "1.5px solid #E0D9FF", borderRadius: 10, padding: "10px 12px", fontSize: 15, outline: "none", fontFamily: "inherit" }} />
+                  {form.birth && <div style={{ fontSize: 12, color: "#888", marginTop: 4, paddingLeft: 4 }}>
+                    {`目前 ${ageInMonths(form.birth)} 個月（${ageLabel(ageInMonths(form.birth))}）・預計 ${formatYearMonth(graduationDate(form.birth))} 畢業`}
                   </div>}
                 </div>
                 <div style={{ marginBottom: 14 }}>
