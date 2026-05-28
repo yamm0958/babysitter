@@ -20,7 +20,7 @@
 
     const MAX_TOTAL = 4;
     const MAX_UNDER2 = 2;
-    const ADMIN_PASSWORD = "1234";
+    const ADMIN_PASSWORD = "590702";
     const STORAGE_KEY = "babysitter-children";
 
     function ageInMonths(birthYearMonth) {
@@ -267,7 +267,7 @@
               placeholder="密碼" style={{ width: "100%", border: `1.5px solid ${err ? "#E55353" : "#E0D9FF"}`, borderRadius: 10, padding: "12px", fontSize: 16, outline: "none", marginBottom: 8, fontFamily: "inherit", textAlign: "center", letterSpacing: 4 }} />
             {err && <div style={{ color: "#E55353", fontSize: 13, marginBottom: 8 }}>密碼錯誤</div>}
             <button onClick={() => pw === ADMIN_PASSWORD ? onLogin() : setErr(true)} style={{ width: "100%", background: "linear-gradient(135deg, #7C6FCD, #A78BFA)", color: "#fff", border: "none", borderRadius: 10, padding: "13px", fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", marginTop: 4 }}>登入</button>
-            <p style={{ color: "#ccc", fontSize: 12, marginTop: 16 }}>預設密碼：1234</p>
+            
           </div>
         </div>
       );
